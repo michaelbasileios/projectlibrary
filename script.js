@@ -1,3 +1,5 @@
+const libraryGrid = document.querySelector('#library-grid');
+
 const myLibrary = [
     {title: "Hobbit",
     author: "Tolkien",
@@ -16,14 +18,4 @@ function Book(title, author, pages, readStatus) {
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
-}
-
-function addBookToLibrary(newBook) {
-    myLibrary.push(newBook);
-}
-
-function iterateArray(array) {
-    for (i=0; i<array.length; i++) {
-        console.log(array[i]);
-    }
 }
