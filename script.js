@@ -28,3 +28,26 @@ function addBook() {
         displayBook(myLibrary[i]);
     }
 }
+
+//function to populate each book entry on the grid with corresponding info
+function displayBook(book) {
+    const libraryCard = document.createElement('div');
+    libraryCard.className = 'library-card';
+
+    const cardTitle = document.createElement('p');
+    cardTitle.className = 'card-title';
+    cardTitle.textContent = book.title;
+    libraryCard.appendChild(cardTitle);
+
+    const cardAuthor = document.createElement('p');
+    cardAuthor.className = 'card-author';
+    cardAuthor.textContent = book.author;
+    libraryCard.appendChild(cardAuthor);
+
+    const cardPages = document.createElement('p');
+    cardPages.className = 'card-pages';
+    cardPages.textContent = `${book.pages} pages`;
+    libraryCard.appendChild(cardPages);
+
+    libraryGrid.appendChild(libraryCard);
+}
