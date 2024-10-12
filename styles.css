@@ -35,6 +35,21 @@ header {
 
 .main-content {
     grid-area: body;
+    display: grid;
+    place-content: center;
+}
+
+#library-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+#library-form > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
 }
 
 #library-grid {
