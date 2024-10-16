@@ -54,16 +54,17 @@ header {
 
 #library-grid {
     display: grid;
-    justify-items: center;
-    width: 50vw;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    min-width: 75vw;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1rem;
+    padding: 1rem;
     border: 2px solid black;
 }
 
 .library-card {
     background-color: beige;
-    width: 100px;
+    text-align: center;
+    /* width: 100px; */
     border: 2px solid red;
 }
 
