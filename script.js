@@ -10,6 +10,11 @@ const myLibrary = [
      author: "Stroker",
      pages: 427,
      readStatus: false
+    },
+    {title: "LOTR",
+     author: "Tolkien",
+     pages: 365,
+     readStatus: true
     }
 ];
 
@@ -34,7 +39,7 @@ function displayBook(book) {
     const libraryCard = document.createElement('div');
     libraryCard.className = 'library-card';
 
-    const cardTitle = document.createElement('p');
+    const cardTitle = document.createElement('h3');
     cardTitle.className = 'card-title';
     cardTitle.textContent = book.title;
     libraryCard.appendChild(cardTitle);
@@ -51,3 +56,5 @@ function displayBook(book) {
 
     libraryGrid.appendChild(libraryCard);
 }
+
+addBook(myLibrary);
