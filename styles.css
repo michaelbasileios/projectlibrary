@@ -10,6 +10,7 @@ body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    height: 100vh;
 }
 img, picture, video, canvas, svg {
     display: block;
@@ -27,14 +28,15 @@ p, h1, h2, h3, h4, h5, h6 {
 
 header {
     background-color: lightskyblue;
-    min-height: 15vh;
     min-width: 100vw;
+    min-height: 15%;
     display: grid;
     place-items: center;
 }
 
 .main-content {
     grid-area: body;
+    height: 75%;
     display: grid;
     place-content: center;
 }
@@ -64,11 +66,5 @@ header {
 .library-card {
     background-color: beige;
     text-align: center;
-    /* width: 100px; */
     border: 2px solid red;
-}
-
-footer {
-    background-color: orange;
-    grid-area: footer;
 }
