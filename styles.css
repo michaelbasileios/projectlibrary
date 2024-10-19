@@ -68,3 +68,9 @@ header {
     text-align: center;
     border: 2px solid red;
 }
+
+.new-book-btn {
+    position: fixed;
+    bottom: 10rem;
+    right: 8.5rem;
+}
