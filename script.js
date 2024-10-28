@@ -32,7 +32,15 @@ function Book(title, author, pages, readStatus) {
 }
 
 //function that takes user info from dialog and stores in library array
-
+function addBook() {
+    libraryForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let newBook = new Book(title.value, author.value, pages.value, status.value);
+        myLibrary.push(newBook);
+        showBooks();
+    })
+}
+addBook();
 
 
 //function that iterates through array and displays books
