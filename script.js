@@ -37,6 +37,8 @@ function addBook() {
         e.preventDefault();
         let newBook = new Book(title.value, author.value, pages.value, status.value);
         myLibrary.push(newBook);
+        newBookDialog.close();
+        libraryForm.reset();
         showBooks();
     })
 }
