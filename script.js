@@ -1,4 +1,6 @@
 const libraryGrid = document.querySelector('#library-grid');
+const newBookBtn = document.querySelector('.new-book-btn');
+const newBookDialog = document.querySelector('dialog');
 
 const myLibrary = [
     {title: "Hobbit",
@@ -58,3 +60,8 @@ function displayBook(book) {
 }
 
 addBook(myLibrary);
+
+//open form to enter new book
+newBookBtn.addEventListener("click", () => {
+    newBookDialog.showModal();
+});
