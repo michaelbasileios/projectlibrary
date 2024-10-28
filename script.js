@@ -1,6 +1,9 @@
 const libraryGrid = document.querySelector('#library-grid');
 const newBookBtn = document.querySelector('.new-book-btn');
 const newBookDialog = document.querySelector('dialog');
+const libraryForm = document.querySelector('#library-form');
+const submitButton = document.querySelector('#submit-btn');
+const cancelButton = document.querySelector('#cancel-btn');
 
 const myLibrary = [
     {title: "Hobbit",
@@ -28,16 +31,20 @@ function Book(title, author, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
+//function that takes user info from dialog and stores in library array
+
+
+
 //function that iterates through array and displays books
-function addBook() {
+function showBooks() {
     libraryGrid.innerHTML = '';
     for (let i = 0; i < myLibrary.length; i++) {
-        displayBook(myLibrary[i]);
+        displayGrid(myLibrary[i]);
     }
 }
 
 //function to populate each book entry on the grid with corresponding info
-function displayBook(book) {
+function displayGrid(book) {
     const libraryCard = document.createElement('div');
     libraryCard.className = 'library-card';
 
@@ -59,7 +66,7 @@ function displayBook(book) {
     libraryGrid.appendChild(libraryCard);
 }
 
-addBook(myLibrary);
+showBooks(myLibrary);
 
 //open form to enter new book
 newBookBtn.addEventListener("click", () => {
