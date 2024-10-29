@@ -44,6 +44,13 @@ function addBook() {
 }
 addBook();
 
+//close new book form without making any changes
+cancelButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    newBookDialog.close();
+    libraryForm.reset();
+})
+
 
 //function that iterates through array and displays books
 function showBooks() {
