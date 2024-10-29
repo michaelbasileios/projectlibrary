@@ -74,10 +74,17 @@ dialog {
     background-color: beige;
     text-align: center;
     border: 2px solid red;
+    position: relative;
+}
+
+button.card-delete {
+    position: absolute;
+    right: 1%;
+    bottom: 55%;
 }
 
 .new-book-btn {
     position: fixed;
-    bottom: 10rem;
-    right: 8.5rem;
+    bottom: 10%;
+    right: 10%;
 }

@@ -73,6 +73,11 @@ function displayGrid(book) {
     cardPages.textContent = `${book.pages} pages`;
     libraryCard.appendChild(cardPages);
 
+    const delBtn = document.createElement('button');
+    delBtn.className = 'card-delete';
+    delBtn.textContent = 'X';
+    libraryCard.appendChild(delBtn);
+
     libraryGrid.appendChild(libraryCard);
 }
 
