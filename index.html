@@ -16,24 +16,21 @@
         </section>
         <dialog>
             <form action="" method="dialog" id="library-form">
-                <div>
+                <div class="form-input-field">
                     <label for="title">Title</label>
                     <input type="text" id="title" name="bk-title" required>
                 </div>
-                <div>
+                <div class="form-input-field">
                     <label for="author">Author</label>
                     <input type="text" name="bk-author" id="author" required>
                 </div>
-                <div>
+                <div class="form-input-field">
                     <label for="pages">Pages</label>
                     <input type="number" name="bk-pages" id="pages" required>
                 </div>
-                <div>
+                <div class="form-input-field">
                     <label for="status">Read</label>
-                    <input type="radio" id="status" name="read-btn" value="Read">
-                    <br>
-                    <label for="status-unread">Not Read</label>
-                    <input type="radio" id="status" name="read-btn" value="Unread">
+                    <input type="checkbox" id="status" name="read-checkbox" value="Read">
                 </div>
                 <button id="submit-btn">Submit</button>
                 <button id="cancel-btn">Cancel</button>

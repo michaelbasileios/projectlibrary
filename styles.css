@@ -61,6 +61,11 @@ dialog {
     gap: 0.5rem;
 }
 
+#library-form > .form-input-field:last-of-type {
+    display: flex;
+    justify-content: center;
+}
+
 #library-grid {
     display: grid;
     min-width: 75vw;
