@@ -35,7 +35,12 @@ function Book(title, author, pages, readStatus) {
 function addBook() {
     libraryForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        let newBook = new Book(title.value, author.value, pages.value, status.value);
+        // let newBook = new Book(title.value, author.value, pages.value, status.value);
+        let title = document.querySelector('#title').value;
+        let author = document.querySelector('#author').value;
+        let pages = document.querySelector('#pages').value;
+        let status = document.querySelector('#status').checked;
+        let newBook = new Book(title, author, pages, status);
         myLibrary.push(newBook);
         newBookDialog.close();
         libraryForm.reset();
@@ -79,6 +84,11 @@ function displayGrid(book) {
     cardPages.className = 'card-pages';
     cardPages.textContent = `${book.pages} pages`;
     libraryCard.appendChild(cardPages);
+
+    const cardStatus = document.createElement('p');
+    cardStatus.className = 'card-status';
+    cardStatus.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
+    libraryCard.appendChild(cardStatus);
 
     const delBtn = document.createElement('button');
     delBtn.className = 'card-delete';
