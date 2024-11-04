@@ -61,44 +61,51 @@ cancelButton.addEventListener('click', (e) => {
 function showBooks() {
     libraryGrid.innerHTML = '';
     for (let i = 0; i < myLibrary.length; i++) {
-        displayGrid(myLibrary[i]);
+        let book = myLibrary[i];
+
+        const libraryCard = document.createElement('div');
+        libraryCard.className = 'library-card';
+
+        const cardTitle = document.createElement('h3');
+        cardTitle.className = 'card-title';
+        cardTitle.textContent = book.title;
+        libraryCard.appendChild(cardTitle);
+
+        const cardAuthor = document.createElement('p');
+        cardAuthor.className = 'card-author';
+        cardAuthor.textContent = book.author;
+        libraryCard.appendChild(cardAuthor);
+
+        const cardPages = document.createElement('p');
+        cardPages.className = 'card-pages';
+        cardPages.textContent = `${book.pages} pages`;
+        libraryCard.appendChild(cardPages);
+
+        const cardStatus = document.createElement('p');
+        cardStatus.className = 'card-status';
+        cardStatus.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
+        libraryCard.appendChild(cardStatus);
+
+        const delBtn = document.createElement('button');
+        delBtn.className = 'card-delete';
+        delBtn.textContent = 'X';
+        delBtn.addEventListener('click', () => {
+            removeBook(i);
+        });
+        libraryCard.appendChild(delBtn);
+        
+
+        libraryGrid.appendChild(libraryCard);
     }
 }
 
-//function to populate each book entry on the grid with corresponding info
-function displayGrid(book) {
-    const libraryCard = document.createElement('div');
-    libraryCard.className = 'library-card';
+showBooks();
 
-    const cardTitle = document.createElement('h3');
-    cardTitle.className = 'card-title';
-    cardTitle.textContent = book.title;
-    libraryCard.appendChild(cardTitle);
-
-    const cardAuthor = document.createElement('p');
-    cardAuthor.className = 'card-author';
-    cardAuthor.textContent = book.author;
-    libraryCard.appendChild(cardAuthor);
-
-    const cardPages = document.createElement('p');
-    cardPages.className = 'card-pages';
-    cardPages.textContent = `${book.pages} pages`;
-    libraryCard.appendChild(cardPages);
-
-    const cardStatus = document.createElement('p');
-    cardStatus.className = 'card-status';
-    cardStatus.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
-    libraryCard.appendChild(cardStatus);
-
-    const delBtn = document.createElement('button');
-    delBtn.className = 'card-delete';
-    delBtn.textContent = 'X';
-    libraryCard.appendChild(delBtn);
-
-    libraryGrid.appendChild(libraryCard);
+//function to remove book from array
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    showBooks();
 }
-
-showBooks(myLibrary);
 
 //open form to enter new book
 newBookBtn.addEventListener("click", () => {
