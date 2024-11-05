@@ -5,23 +5,12 @@ const libraryForm = document.querySelector('#library-form');
 const submitButton = document.querySelector('#submit-btn');
 const cancelButton = document.querySelector('#cancel-btn');
 
-const myLibrary = [
-    {title: "Hobbit",
-    author: "Tolkien",
-    pages: 326,
-    readStatus: true
-    },
-    {title: "Dracula",
-     author: "Stroker",
-     pages: 427,
-     readStatus: false
-    },
-    {title: "LOTR",
-     author: "Tolkien",
-     pages: 365,
-     readStatus: true
-    }
-];
+let myLibrary = [];
+
+let myBook1 = new Book('LOTR', 'Tolkien', 245, true);
+let myBook2 = new Book('Dracula', 'Stroker', 444, false);
+
+myLibrary = [myBook1, myBook2];
 
 //constructor function for books
 function Book(title, author, pages, readStatus) {
@@ -96,14 +85,10 @@ function showBooks() {
         // cardStatus.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
         // libraryCard.appendChild(cardStatus);
 
-        const cardStatus = document.createElement('input');
-        cardStatus.setAttribute('type', 'checkbox');
-        cardStatus.setAttribute('name', 'read-status-card');
-        cardStatus.checked = book.readStatus ? true : false;
-        const cardStatusLabel = document.createElement('label');
-        cardStatusLabel.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
-        cardStatusLabel.appendChild(cardStatus);
-        libraryCard.appendChild(cardStatusLabel);
+        const cardReadToggle = document.createElement('button');
+        cardReadToggle.className = 'card-rd-toggle';
+        cardReadToggle.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
+        libraryCard.appendChild(cardReadToggle);
 
         const delBtn = document.createElement('button');
         delBtn.className = 'card-delete';
