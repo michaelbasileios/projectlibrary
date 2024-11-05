@@ -31,6 +31,16 @@ function Book(title, author, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
+//function to toggle read status
+Book.prototype.toggleRead = function() {
+    this.readStatus = !this.readStatus;
+}
+
+function toggleRead(index) {
+    myLibrary[index].toggleRead();
+    showBooks();
+}
+
 //function that takes user info from dialog and stores in library array
 function addBook() {
     libraryForm.addEventListener("submit", (e) => {
@@ -81,10 +91,19 @@ function showBooks() {
         cardPages.textContent = `${book.pages} pages`;
         libraryCard.appendChild(cardPages);
 
-        const cardStatus = document.createElement('p');
-        cardStatus.className = 'card-status';
-        cardStatus.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
-        libraryCard.appendChild(cardStatus);
+        // const cardStatus = document.createElement('p');
+        // cardStatus.className = 'card-status';
+        // cardStatus.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
+        // libraryCard.appendChild(cardStatus);
+
+        const cardStatus = document.createElement('input');
+        cardStatus.setAttribute('type', 'checkbox');
+        cardStatus.setAttribute('name', 'read-status-card');
+        cardStatus.checked = book.readStatus ? true : false;
+        const cardStatusLabel = document.createElement('label');
+        cardStatusLabel.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
+        cardStatusLabel.appendChild(cardStatus);
+        libraryCard.appendChild(cardStatusLabel);
 
         const delBtn = document.createElement('button');
         delBtn.className = 'card-delete';
