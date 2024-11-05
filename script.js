@@ -25,11 +25,6 @@ Book.prototype.toggleRead = function() {
     this.readStatus = !this.readStatus;
 }
 
-function toggleRead(index) {
-    myLibrary[index].toggleRead();
-    showBooks();
-}
-
 //function that takes user info from dialog and stores in library array
 function addBook() {
     libraryForm.addEventListener("submit", (e) => {
@@ -80,14 +75,13 @@ function showBooks() {
         cardPages.textContent = `${book.pages} pages`;
         libraryCard.appendChild(cardPages);
 
-        // const cardStatus = document.createElement('p');
-        // cardStatus.className = 'card-status';
-        // cardStatus.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
-        // libraryCard.appendChild(cardStatus);
-
         const cardReadToggle = document.createElement('button');
         cardReadToggle.className = 'card-rd-toggle';
         cardReadToggle.textContent = `${book.readStatus ? "Read" : "Not Read"}`;
+        cardReadToggle.addEventListener('click', () => {
+            myLibrary[i].toggleRead();
+            showBooks();
+        })
         libraryCard.appendChild(cardReadToggle);
 
         const delBtn = document.createElement('button');
