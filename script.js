@@ -7,29 +7,43 @@ const cancelButton = document.querySelector('#cancel-btn');
 
 let myLibrary = [];
 
+//USING CONSTRUCTOR SYNTAX
+// function Book(title, author, pages, readStatus) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.readStatus = readStatus;
+// }
+
+// function to toggle read status
+// Book.prototype.toggleRead = function() {
+//     this.readStatus = !this.readStatus;
+// }
+
+//using class syntax
+class Book {
+    constructor(title, author, pages, readStatus) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.readStatus = readStatus;
+    }
+
+    toggleRead() {
+        this.readStatus = !this.readStatus;
+    }
+}
+
 let myBook1 = new Book('LOTR', 'Tolkien', 245, true);
 let myBook2 = new Book('Dracula', 'Stroker', 444, false);
 
 myLibrary = [myBook1, myBook2];
 
-//constructor function for books
-function Book(title, author, pages, readStatus) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.readStatus = readStatus;
-}
-
-//function to toggle read status
-Book.prototype.toggleRead = function() {
-    this.readStatus = !this.readStatus;
-}
 
 //function that takes user info from dialog and stores in library array
 function addBook() {
     libraryForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        // let newBook = new Book(title.value, author.value, pages.value, status.value);
         let title = document.querySelector('#title').value;
         let author = document.querySelector('#author').value;
         let pages = document.querySelector('#pages').value;
