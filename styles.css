@@ -1,95 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 * {
-    margin: 0;
+  margin: 0;
 }
 body {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    height: 100vh;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
 }
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
-input, button, textarea, select {
-    font: inherit;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
-#root, #__next {
-    isolation: isolate;
+#root,
+#__next {
+  isolation: isolate;
 }
 
 header {
-    background-color: lightskyblue;
-    min-width: 100vw;
-    min-height: 15%;
-    display: grid;
-    place-items: center;
+  background-color: lightskyblue;
+  min-width: 100vw;
+  min-height: 15%;
+  display: grid;
+  place-items: center;
 }
 
 .main-content {
-    grid-area: body;
-    height: 75%;
-    display: grid;
-    place-content: center;
+  grid-area: body;
+  height: 75%;
+  display: grid;
+  place-content: center;
 }
 
 dialog {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #library-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
 }
 
 #library-form > div {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 #library-form > .form-input-field:last-of-type {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #library-grid {
-    display: grid;
-    min-width: 75vw;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    border: 2px solid black;
+  display: grid;
+  min-width: 75vw;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid black;
 }
 
 .library-card {
-    background-color: beige;
-    text-align: center;
-    border: 2px solid red;
-    position: relative;
+  background-color: beige;
+  text-align: center;
+  border: 2px solid red;
+  position: relative;
 }
 
 button.card-delete {
-    position: absolute;
-    right: 1%;
-    bottom: 55%;
+  position: absolute;
+  right: 1%;
+  bottom: 55%;
 }
 
 .new-book-btn {
-    position: fixed;
-    bottom: 10%;
-    right: 10%;
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
 }
