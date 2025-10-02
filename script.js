@@ -43,6 +43,7 @@ myLibrary = [myBook1, myBook2];
 function addBook() {
   libraryForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    checkRequiredInputs();
     let title = document.querySelector("#title").value;
     let author = document.querySelector("#author").value;
     let pages = document.querySelector("#pages").value;
@@ -57,7 +58,7 @@ function addBook() {
 addBook();
 
 //Function to display custom error message if required inputs are missing
-function displayCustomError() {
+function checkRequiredInputs() {
   const requiredFormElements = document.querySelectorAll(
     "#library-form input[required]"
   );
