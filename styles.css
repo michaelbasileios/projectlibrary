@@ -71,6 +71,11 @@ dialog {
   padding: 1rem;
 }
 
+#library-form input:user-invalid {
+  border: 2px solid red;
+  background-color: beige;
+}
+
 #library-form > div {
   display: flex;
   justify-content: space-between;
